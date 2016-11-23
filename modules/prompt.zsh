@@ -19,7 +19,22 @@ __ultimate::prompt::path()
     local rsc="%{$reset_color%}"
     local sep="$rsc/$path_color"
 
-    echo "$path_color$(print -P %2~ | sed s_/_${sep}_g)$rsc"
+    case "$ZSH_ULTIMATE_PATHTYPE" in
+        "fullpath")
+            _path_="$(print -D "$PWD")"
+            ;;
+        "shortpath")
+            if type pathshorten &>/dev/null; then
+                _path_="$(pathshorten "${PWD/$HOME/~}")"
+            else
+                _path_="$PWD"
+            fi
+            ;;
+        *)
+            _path_="$(print -P %2~ | sed s_/_${sep}_g)"
+            ;;
+    esac
+    echo "$path_color$_path_$rsc"
 }
 
 __ultimate::prompt::git()
