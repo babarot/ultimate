@@ -1,12 +1,10 @@
 # vim: ft=zsh
 
-() {
-local f
 for f in "${${(%):-%N}:A:h}"/modules/*.zsh
 do
     source "$f"
 done
-}
+unset f
 
 PROMPT+='$(__ultimate::prompt::hostname)'
 PROMPT+='$(__ultimate::prompt::user)'
