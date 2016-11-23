@@ -49,11 +49,9 @@ __ultimate::prompt::vimode()
     case $KEYMAP in
         main|viins)
             ret+="$ON_COLOR"
-            vimode_switch_on=false
             ;;
         vicmd)
             ret+="$OFF_COLOR"
-            vimode_switch_on=true
             ;;
     esac
 
