@@ -24,11 +24,7 @@ __ultimate::prompt::path()
             _path_="$(print -D "$PWD")"
             ;;
         "shortpath")
-            if type pathshorten &>/dev/null; then
-                _path_="$(pathshorten "${PWD/$HOME/~}")"
-            else
-                _path_="$PWD"
-            fi
+            _path_="$(pathshorten "${PWD/$HOME/~}")"
             ;;
         *)
             _path_="$(print -P %2~ | sed s_/_${sep}_g)"
