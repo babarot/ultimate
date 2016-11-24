@@ -1,3 +1,24 @@
+PROMPT=""
+RPROMPT=""
+PROMPT_CHAR="❯"
+
+#TMOUT=1
+#
+#TRAPALRM() {
+#    zle reset-prompt
+#}
+
+setopt prompt_subst
+
+function zle-line-init zle-line-finish zle-keymap-select {
+    zle reset-prompt
+    zle -R
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+zle -N zle-line-finish
+
 __ultimate::prompt::user()
 {
     echo "%(!.$ON_COLOR.$OFF_COLOR)$PROMPT_CHAR%{$reset_color%}"
