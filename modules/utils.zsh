@@ -7,9 +7,9 @@ git_repo_status() {
     local rs="$(git status --porcelain -b)"
 
     if $(echo "$rs" | grep -v '^##' &> /dev/null); then # is dirty
-        echo "%{$fg[violet]%}"
+        echo "%{$fg[orange]%}"
     elif $(echo "$rs" | grep '^## .*diverged' &> /dev/null); then # has diverged
-        echo "%{$fg[violet]%}"
+        echo "%{$fg[orange]%}"
     elif $(echo "$rs" | grep '^## .*behind' &> /dev/null); then # is behind
         echo "%{[38;5;011m%}%}"
     elif $(echo "$rs" | grep '^## .*ahead' &> /dev/null); then # is ahead
