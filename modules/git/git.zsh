@@ -1,9 +1,11 @@
-git_branch_name() {
+__ultimate::git::branch()
+{
     local branch_name="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
     [[ -n $branch_name ]] && echo "$branch_name"
 }
 
-git_repo_status() {
+__ultimate::git::repo_stat()
+{
     local rs="$(git status --porcelain -b)"
 
     if $(echo "$rs" | grep -v '^##' &> /dev/null); then # is dirty
@@ -17,11 +19,4 @@ git_repo_status() {
     else # is clean
         echo "%{$fg[green]%}"
     fi
-}
-
-pathshorten() {
-    setopt localoptions noksharrays extendedglob
-    local MATCH MBEGIN MEND
-    local -a match mbegin mend
-    "${2:-echo}" "${1//(#m)[^\/]##\//${MATCH/(#b)([^.])*/$match[1]}/}"
 }

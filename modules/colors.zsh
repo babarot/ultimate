@@ -21,7 +21,7 @@ for color in {000..255}; do
 done
 
 # Show all 256 colors with color number
-function spectrum() {
+spectrum() {
     local cols=4
     if [[ "${1}" != "" ]]; then
         cols=${1}

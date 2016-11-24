@@ -1,6 +1,6 @@
 # vim: ft=zsh
 
-for f in "${${(%):-%N}:A:h}"/modules/*.zsh
+for f in "${${(%):-%N}:A:h}"/**/*.(|z)sh(N-.)
 do
     source "$f"
 done
