@@ -9,6 +9,7 @@ PROMPT_CHAR="❯"
 #}
 
 setopt prompt_subst
+setopt transient_rprompt
 
 function zle-line-init zle-line-finish zle-keymap-select {
     zle reset-prompt
