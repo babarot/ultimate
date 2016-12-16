@@ -6,13 +6,16 @@ do
 done
 unset f
 
-PROMPT+='$(__ultimate::prompt::hostname)'
-PROMPT+='$(__ultimate::prompt::user)'
-PROMPT+='$(__ultimate::prompt::job)'
-PROMPT+='$(__ultimate::prompt::vimode)'
-PROMPT+='$(__ultimate::prompt::status)'
-PROMPT+=' '
+myprompt+='$(__ultimate::prompt::hostname)'
+myprompt+='$(__ultimate::prompt::user)'
+myprompt+='$(__ultimate::prompt::job)'
+myprompt+='$(__ultimate::prompt::vimode)'
+myprompt+='$(__ultimate::prompt::status)'
+myprompt+=' '
+__ultimate::indicator::vim_mode "$myprompt"
 
 RPROMPT+='$(__ultimate::prompt::exit_code)'
 RPROMPT+='$(__ultimate::prompt::path)'
 RPROMPT+='$(__ultimate::prompt::git)'
+
+SPROMPT+='$(__ultimate::prompt::correct)'

@@ -1,5 +1,6 @@
 PROMPT=""
 RPROMPT=""
+SPROMPT=""
 PROMPT_CHAR="❯"
 
 #TMOUT=1
@@ -7,6 +8,8 @@ PROMPT_CHAR="❯"
 #TRAPALRM() {
 #    zle reset-prompt
 #}
+
+autoload -Uz add-zsh-hook
 
 setopt prompt_subst
 setopt transient_rprompt
@@ -104,4 +107,9 @@ __ultimate::prompt::hostname()
 __ultimate::prompt::exit_code()
 {
     echo "%(?..$ERR_COLOR%? ⏎  ) "
+}
+
+__ultimate::prompt::correct()
+{
+    echo "%{${fg[red]}%}Did you mean?: %R -> %r [nyae]? %{${reset_color}%}"
 }
