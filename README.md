@@ -1,6 +1,8 @@
 ultimate
 ========
 
+[![](https://img.shields.io/badge/powered%20by-zplug-ca7f85.svg?style=flat)](https://github.com/zplug/zplug)
+
 `ultimate` is a zsh theme, the fork version [S1cK94/minimal](https://github.com/S1cK94/minimal).
 
 ![](./screenshot.png)
@@ -27,8 +29,8 @@ zplug "b4b4r07/ultimate", as:theme
 
 ## License
 
-MIT
+[MIT](http://b4b4r07.mit-license.org)
 
 ## Author
 
-b4b4r07
+[b4b4r07](https://github.com/b4b4r07)
