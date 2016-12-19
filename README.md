@@ -9,7 +9,7 @@ ultimate
 
 ## Features
 
-- git prompt
+- git prompt (with indicator)
 - vim mode indicator
 - short pwd like vim (`pathshorten()`)
 
