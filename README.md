@@ -15,7 +15,7 @@ ultimate
 
 ## Installation
 
-By using [zplug](https://github.com/zplug/zplug) you can easily install as a theme.
+By using [zplug](https://github.com/zplug/zplug) you can easily install as a theme:
 
 ```zsh
 zplug "b4b4r07/ultimate", as:theme
